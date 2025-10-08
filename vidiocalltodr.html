@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharma24 Video Call</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f3f6f9;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #f44336;
+            padding: 20px 0;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        header .logo h1 {
+            font-size: 2.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            color: #fff;
+            text-align: center;
+        }
+
+        nav .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding-top: 10px;
+        }
+
+        nav .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav .nav-links a:hover {
+            color: #ffb74d;
+            transform: translateY(-5px);
+        }
+
+        /* Main Content Styles */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 30px auto;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        /* Doctor Selection Section */
+        .doctor-selection {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .doctor-card {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 20px;
+            width: 250px;
+            margin: 10px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .doctor-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .doctor-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .doctor-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .doctor-specialization {
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .btn-video-call {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn-video-call:hover {
+            background-color: #0056b3;
+            transform: translateY(-5px);
+        }
+        footer {
+    background-color: #263238; /* Dark gray-blue background */
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+footer p {
+    font-size: 1.1rem;
+    margin-top: 15px;
+    opacity: 0.7;
+}
+
+        /* Media Query for Responsive Design */
+        @media (max-width: 768px) {
+            .doctor-selection {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            /* Footer */
+
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <h1>Pharma24</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="dr.html">QUIK Solutions</a></li>
+                <li><a href="beauty.html">BEAUTY Products</a></li>
+                <li><a href="med.html">Find Store</a></li>
+                <li><a href="vidiocalltodr.html">Video Call</a></li>
+                <li><a href="findclinik.html">Find Clinic</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="container">
+        <h1>GET HELP WITH TOP 5 DOCTORS</h1>
+        <div class="doctor-selection">
+            <!-- Doctor Card 1 -->
+            <div class="doctor-card">
+                <img src="dr-tanmay (1).jpg" alt="Doctor Image" class="doctor-image">
+                <div class="doctor-name">Dr. Tanmay S Kulkarni</div>
+                <div class="doctor-specialization">Cardiologist</div>
+                <button class="btn-video-call" onclick="startVideoCall('Dr. Tanmay S Kulkarni', 'Cardiologist')">Start Video Call</button>
+            </div>
+            <!-- Doctor Card 2 -->
+            <div class="doctor-card">
+                <img src="dermologist.png" alt="Doctor Image" class="doctor-image">
+                <div class="doctor-name">Dr. Aradhana Sood</div>
+                <div class="doctor-specialization">Dermatologist</div>
+                <button class="btn-video-call" onclick="startVideoCall('Dr. Aradhana Sood', 'Dermatologist')">Start Video Call</button>
+            </div>
+            <!-- Doctor Card 3 -->
+            <div class="doctor-card">
+                <img src="Dr. Rushikesh Deshpande.jpg" alt="Doctor Image" class="doctor-image">
+                <div class="doctor-name">Dr. Rushikesh Deshpande</div>
+                <div class="doctor-specialization">Neurologist</div>
+                <button class="btn-video-call" onclick="startVideoCall('Dr. Rushikesh Deshpande', 'Neurologist')">Start Video Call</button>
+            </div>
+            <!-- Doctor Card 4 -->
+            <div class="doctor-card">
+                <img src="Dr. Nikhil.png" alt="Doctor Image" class="doctor-image">
+                <div class="doctor-name">Dr. Nikhil</div>
+                <div class="doctor-specialization">Orthopedist</div>
+                <button class="btn-video-call" onclick="startVideoCall('Dr. Nikhil', 'Orthopedist')">Start Video Call</button>
+            </div>
+            <!-- Doctor Card 5 -->
+            <div class="doctor-card">
+                <img src="Dr. Ashwini Kulkarni.jpeg" alt="Doctor Image" class="doctor-image">
+                <div class="doctor-name">Dr. Ashwini Kulkarni</div>
+                <div class="doctor-specialization">Pediatrician</div>
+                <button class="btn-video-call" onclick="startVideoCall('Dr. Ashwini Kulkarni', 'Pediatrician')">Start Video Call</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for handling the video call -->
+    <script>
+        function startVideoCall(doctorName, specialization) {
+            alert(`Starting a video call with ${doctorName}, a ${specialization}.`);
+        }
+    </script>
+     <!-- Footer -->
+     <footer>
+        <p>&copy; 2025 Pharma24 | All Rights Reserved</p>
+    </footer>
+    
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login - Medicine Ecommerce</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="login-box">
+      <div class="form-container">
+        <h2>Pharma24</h2>
+        <form id="loginForm" onsubmit="handleLogin(event)">
+          <div class="input-container">
+            <input type="email" id="email" placeholder="Enter your email" required>
+          </div>
+          <div class="input-container">
+            <input type="password" id="password" placeholder="Enter your password" required>
+          </div>
+          <div class="btn-container">
+            
+                
+              
+                
+                
+                <a href="1st.html" class="buy-btn">LOGIN</a>
+        </div>
+        
+        
+        </form>
+
+        <div class="location-verification">
+          <button onclick="checkLocationAccess()">Enable Location</button>
+          <p id="location-status"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+</body>
+
+</html>
+

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Nearby Medical Stores</title>
+    <link rel="stylesheet" href="med.css">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f3f6f9;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #f44336;
+            padding: 20px;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo h1 {
+            font-size: 2.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(45deg, rgba(253, 29, 29, 0.8), rgba(252, 176, 69, 0.8)), url('hero-image.jpg') center/cover no-repeat;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        #hero .hero-content {
+            max-width: 850px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+        }
+
+        #hero h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        #hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+        }
+
+        .cta-btn {
+            background-color: #ffb74d;
+            color: #333;
+            padding: 18px 28px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background-color: #ff9800;
+            transform: scale(1.1);
+        }
+
+        /* Store List Section */
+        .store-list {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #fafafa;
+        }
+
+        .store-list h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #e53935;
+        }
+
+        #store-list-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .store-item {
+            background-color: #fff;
+            padding: 15px 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .store-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .store-item p {
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #263238;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer p {
+            font-size: 1.1rem;
+            margin-top: 15px;
+            opacity: 0.7;
+        }
+
+        footer .social-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            #hero h1 {
+                font-size: 2.8rem;
+            }
+
+            #store-list-container {
+                padding: 0 15px;
+            }
+
+            .store-item {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .cta-btn {
+                font-size: 1rem;
+                padding: 12px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <h1>Pharma24</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="dr.html">QUIK Solutions </a></li>
+                <li><a href="beauty.html"> BEAUTY Products</a></li>
+                <li><a href="med.html"> find store</a></li>
+                <li><a href="vidiocalltodr.html">Video Call</a></li>
+                <li><a href="findclinik.html">find clinic</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Find a Medical Store Near You</h1>
+            <p>Get the nearest pharmacy instantly! Your health is just a click away.</p>
+            <button class="cta-btn" onclick="findMedicalStores()">Find Medical Stores</button>
+        </div>
+    </section>
+
+    <!-- Store List Section -->
+    <section class="store-list">
+        <h2>Nearby Medical Stores:</h2>
+        <div id="store-list-container"></div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="contact">
+        <p>&copy; 2025 Pharma24. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+
+    <script>
+        // Function to find nearby stores using geolocation
+        function findMedicalStores() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                alert("Geolocation is not supported by your browser.");
+            }
+        }
+
+        // Show position on success
+        function showPosition(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            document.getElementById("store-list-container").innerHTML = `
+                <p>Fetching nearby medical stores...</p>
+                <p>Latitude: ${latitude}, Longitude: ${longitude}</p>
+                <a href="https://www.google.com/maps/search/pharmacy/@${latitude},${longitude},15z" target="_blank">
+                    <button class="cta-btn">View on Map</button>
+                </a>
+            `;
+        }
+
+        // Handle geolocation errors
+        function showError(error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    alert("User denied the request for Geolocation.");
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    alert("Location information is unavailable.");
+                    break;
+                case error.TIMEOUT:
+                    alert("The request to get user location timed out.");
+                    break;
+                case error.UNKNOWN_ERROR:
+                    alert("An unknown error occurred.");
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

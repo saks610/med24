@@ -1,0 +1,49 @@
+<section class="products" id="products">
+    <h2>Featured Products</h2>
+    <div class="product-container">
+        <!-- Existing Product Cards -->
+        <div class="product-card">
+            <img src="Paracetamol.jfif" alt="Medicine 1">
+            <h3>Paracetamol 500mg</h3>
+            <p class="price">₹11.45</p>
+            <a href="https://www.amazon.in/Pacimol-500Mg-Blister-Pack-Tablets/dp/B099FFW4X4" class="buy-btn">Add to Cart</a>
+        </div>
+        <div class="product-card">
+            <img src="VITAMINC.jfif" alt="Medicine 2">
+            <h3>Vitamin C 1000mg</h3>
+            <p class="price">₹499</p>
+            <a href="https://www.amazon.in/stores/page/3F90E278" class="buy-btn">Add to Cart</a>
+        </div>
+        <div class="product-card">
+            <img src="ibuprofen-400-mg-bp-tablets.webp" alt="Medicine 3">
+            <h3>Ibuprofen 400mg</h3>
+            <p class="price">₹35</p>
+            <a href="https://www.amazon.in/Brufen-600-Blister-Pack-Tablets/dp/B0842QQK9C" class="buy-btn">Add to Cart</a>
+        </div>
+        
+        <!-- New Products -->
+        <div class="product-card">
+            <img src="Aspirin.jfif" alt="Medicine 4">
+            <h3>Aspirin 500mg</h3>
+            <p class="price">₹35</p>
+            <a href="https://www.amazon.in/Aspirin-500mg-Tablets/dp/B08BRJ8" class="buy-btn">Add to Cart</a>
+        </div>
+        <div class="product-card">
+            <img src="Loratadine.jfif" alt="Medicine 5">
+            <h3>Loratadine 10mg</h3>
+            <p class="price">₹99</p>
+            <a href="https://www.amazon.in/Loratadine-10mg-Tablets/dp/B08Y7V4" class="buy-btn">Add to Cart</a>
+        </div>
+        <div class="product-card">
+            <img src="Amoxicillin.jfif" alt="Medicine 6">
+            <h3>Amoxicillin 500mg</h3>
+            <p class="price">₹110</p>
+            <a href="https://www.amazon.in/Amoxicillin-500mg-Tablets/dp/B08Z4K7" class="buy-btn">Add to Cart</a>
+        </div>
+        
+        <!-- Add more as needed -->
+    </div>
+    <div class="see-more">
+        <a href="products.html" class="cta-btn">See More Products</a>
+    </div>
+</section>
